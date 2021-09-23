@@ -45,7 +45,7 @@ class TodoList(Resource):
         args = parser.parse_args()
         todo_id = int(max(TODOS.keys()).lstrip('todo')) + 1
         todo_id = f'todo{todo_id}'
-        TODOS[todo_id] = args['task']
+        TODOS[todo_id] = {'task': args['task']}
         return TODOS[todo_id], 201
 
 
